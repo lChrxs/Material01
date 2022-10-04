@@ -1,0 +1,10 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.active {
+  border-left: 3px solid darkred;
+  font-size: 20px;
+  background-color: rgba(128, 128, 128, 0.499) !important;
+  transition: all ease-in-out;
+}
