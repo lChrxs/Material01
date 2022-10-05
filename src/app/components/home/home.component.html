@@ -1,1 +1,47 @@
-<p>home works!</p>
+<mat-grid-list cols="1" rowHeight="150px" class="mt-5">
+  <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="2"
+    >
+    <mat-grid-tile-header class="fs-5">Accion</mat-grid-tile-header>
+    <ng-container *ngFor="let movie of actionMovies | slice: 0:10">
+      <mat-card class="mx-2" (click)="openModal(movie.id)">
+        <img *ngIf="movie.poster" mat-card-image [src]="'https://image.tmdb.org/t/p/w200/' + movie.poster" class="poster zoom">
+        <img *ngIf="!movie.poster" mat-card-image src="../../../assets/img/ace.png" class="poster zoom">
+      </mat-card>
+    </ng-container>
+    
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="1" rowHeight="150px" class="mt-3">
+  <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="2"
+    >
+    <mat-grid-tile-header class="fs-5">Comedia</mat-grid-tile-header>
+    <ng-container *ngFor="let movie of comedyMovies | slice: 0:10">
+      <mat-card class="mx-2" (click)="openModal(movie.id)">
+        <img *ngIf="movie.poster" mat-card-image [src]="'https://image.tmdb.org/t/p/w200/' + movie.poster" class="poster zoom">
+        <img *ngIf="!movie.poster" mat-card-image src="../../../assets/img/ace.png" class="poster zoom">
+      </mat-card>
+    </ng-container>
+    
+  </mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="1" rowHeight="150px" class="mt-3">
+  <mat-grid-tile
+    [colspan]="1"
+    [rowspan]="2"
+    >
+    <mat-grid-tile-header class="fs-5">Drama</mat-grid-tile-header>
+    <ng-container *ngFor="let movie of dramaMovies | slice: 0:10">
+      <mat-card class="mx-2" (click)="openModal(movie.id)">
+        <img *ngIf="movie.poster" mat-card-image [src]="'https://image.tmdb.org/t/p/w200/' + movie.poster" class="poster zoom">
+        <img *ngIf="!movie.poster" mat-card-image src="../../../assets/img/ace.png" class="poster zoom">
+      </mat-card>
+    </ng-container>
+    
+  </mat-grid-tile>
+</mat-grid-list>

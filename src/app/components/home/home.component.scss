@@ -1,0 +1,24 @@
+.poster {
+  height: 230px;
+  width: 175px;
+}
+
+.mat-grid-tile-header {
+  height: 34px !important;
+}
+
+.mat-card {
+  padding-bottom: 0 !important;
+}
+
+.zoom {
+  transform: scale(1);
+  transition: all .3s 0s ease-in-out;
+  z-index: 1;
+}
+
+.zoom:hover{
+  overflow: hidden;
+  transform: scale(1.2);
+  z-index: 2;
+}

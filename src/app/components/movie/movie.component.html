@@ -1,0 +1,49 @@
+<div class="contenedor" *ngIf="movie">
+  <!-- *Boton para cerrar la ventana modal -->
+  <div class="float-end">
+    <button mat-icon-button (click)="close()">
+      <mat-icon class="fs-2 text-white">clear</mat-icon>
+    </button>
+  </div>
+
+  <div *ngIf="movie.background" class="bg-image" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/original' + movie.background +')'}"></div>
+  <div *ngIf="!movie.background" class="imagen-fondo" [ngStyle]="{'background-image': 'url(https://image.tmdb.org/t/p/original' + movie.poster +')'}"></div>
+
+  <div class="mt-4 ps-5 text-white w-100">
+    <p class="fs-2 py-2">{{movie.title}}</p>
+    <p class="fs-4 py-2">Estreno: {{movie.date | date: 'dd/MMMM/yyyy'}}</p>
+    <ng-container *ngFor="let gen of movie.genres, let isLast=last">
+      <span class="fs-4 py-2">{{gen.name}}{{isLast ? '' : ', '}}</span>
+    </ng-container>
+
+    <ng-container *ngIf="movie.overview; else default">
+      <p class="fs-4 py-2 pe-4">{{movie.overview}}</p>
+    </ng-container>
+
+    <ng-template #default>
+      <p class="fs-4 py-2 pe-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis ligula nibh, quis fringilla tellus
+        consequat eu. Fusce fermentum enim quis dolor blandit, at dictum risus tempus. Fusce eget vulputate urna. In
+        sodales tempus sapien ut viverra. Nulla quam sapien, lacinia in odio sed, aliquam luctus nunc. Integer
+        ullamcorper ipsum nec neque tincidunt, eu pulvinar urna viverra. Nulla vel urna sollicitudin, luctus urna vitae,
+        porttitor lacus. Cras fringilla metus nec suscipit tincidunt. Donec vitae est auctor, dictum nisl a, cursus
+        ipsum. Nam laoreet quam ipsum, nec dignissim purus pellentesque ac. Duis nulla lorem, aliquam non mi sed,
+        blandit fringilla massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Curabitur mollis orci eu imperdiet convallis. Etiam sit amet iaculis lacus, eget congue risus. In diam libero,
+        feugiat id finibus eu, vehicula sit amet leo.</p>
+    </ng-template>
+
+    <div class="d-block">
+      <button mat-icon-button #add class="me-5">
+        <mat-icon>add</mat-icon>
+        <p class="fs-6">Mi lista</p>
+      </button>
+      
+      <button mat-icon-button #like class="ms-5" (click)="likeMovie(data)" [ngStyle]="{'color': liked ? 'red' : 'white'}">
+        <mat-icon>favorite</mat-icon>
+        <p class="fs-6">Me gusta</p>
+      </button>
+    </div>
+
+  </div>
+
+</div>

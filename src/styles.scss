@@ -1,7 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 
 /* Importing Bootstrap SCSS file. */
 @import 'bootstrap/scss/bootstrap';
+
+.mat-toolbar {
+  background:rgb(24, 22, 22) !important;
+}
+
+.mat-drawer-container {
+  background-color: black !important;
+}
+
+.modalBg {
+  background-color: rgb(24, 22, 22);
+  mat-dialog-container {
+    background: none;
+    padding: 14px;
+  }
+}
