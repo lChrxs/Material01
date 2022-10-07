@@ -29,10 +29,9 @@ export class MovieDbService {
     );
   }
 
-  getTrending(): Observable<any>{
-    return this.http.get(environment.MOVIES_URL + ApiEndPoints.TRENDING).pipe(
+  getTrending(page: number): Observable<any>{
+    return this.http.get(environment.MOVIES_URL + ApiEndPoints.getTrendingMovies(page)).pipe(
       map((res: any) => {
-        console.log(res);
         
         let response: MovieData[] = []
         res.results.forEach((el: any) => {
@@ -54,8 +53,8 @@ export class MovieDbService {
     );
   }
 
-  getMoviesByGenre(id: number): Observable<any>{
-    return this.http.get(environment.MOVIES_URL + ApiEndPoints.getMoviesByGenre(id)).pipe(
+  getMoviesByGenre(id: number, page: number): Observable<any>{
+    return this.http.get(environment.MOVIES_URL + ApiEndPoints.getMoviesByGenre(id, page)).pipe(
       map((res: any) => {
         let response: MovieData[] = []
         res.results.forEach((el: any) => {

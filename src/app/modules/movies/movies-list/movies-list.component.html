@@ -1,8 +1,23 @@
-<div class="container-fluid p-0 mb-5">
+<!-- <div class="container-fluid p-0 mb-5">
   <div class="row d-flex justify-content-center mt-4 mx-1">
     <mat-card (click)="openModal(movie)" *ngFor="let movie of movies" class="movie-card zoom mx-1 my-1">
       <img *ngIf="movie.poster" mat-card-image [src]="movieS.getMovieImage(movie.poster)">
       <img *ngIf="!movie.poster" mat-card-image src="../../../assets/img/ace.png">
     </mat-card>
+  </div>
+</div> -->
+
+<div class="container-fluid p-0 mb-5" (scroll)="detectPosition($event)">
+  <div class="row d-flex justify-content-center">
+    <div class="col-8 col-md-11 col-lg-10 mt-4 mt-lg-5">
+      <div class="row g-4">
+        <div class="col-12 col-md-4 col-lg-2" *ngFor="let movie of movies">
+          <mat-card (click)="openModal(movie)" class="zoom h-100" style="background-image: url('./assets/img/loading.gif');">
+            <img *ngIf="movie.poster" class="h-100" mat-card-image [src]="movieS.getMovieImage(movie.poster)">
+            <img *ngIf="!movie.poster" mat-card-image src="../../../assets/img/ace.png">
+          </mat-card>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

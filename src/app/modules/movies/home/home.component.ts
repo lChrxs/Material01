@@ -10,6 +10,7 @@ import { MovieCategory } from '../../../models/movie-category.model';
 export class HomeComponent implements OnInit {
 
   genres: MovieCategory[] = []
+  scrollBottom: number = 1
 
   constructor(public movieS: MovieDbService) { }
 

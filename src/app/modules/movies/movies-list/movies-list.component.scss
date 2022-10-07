@@ -6,8 +6,18 @@
 }
 
 .mat-card {
+  // background-color: black !important;
   padding-bottom: 0 !important;
+  padding-top: 0 !important;
   box-shadow: none !important;
+  background: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  // height: 300px;
+
+  // img {
+  //   height: 300px;
+  // }
 }
 
 .zoom {
@@ -21,3 +31,8 @@
   transform: scale(1.2);
   z-index: 2;
 }
+
+.container-fluid{ 
+  overflow: auto;
+  height: 100%;
+} 

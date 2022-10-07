@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MovieComponent } from './components/movie/movie.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ApiKeyInterceptor } from './services/interceptors/api-key.interceptor';
+import { CdkScrollableModule } from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ApiKeyInterceptor } from './services/interceptors/api-key.interceptor';
     BrowserAnimationsModule,
     NgbModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    CdkScrollableModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ApiKeyInterceptor, multi: true}

@@ -1,4 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@import "@angular/material/theming";
+@include mat.core();
+$app-primary: mat-palette(mat.$grey-palette, 900);
+$app-accent: mat-palette(mat.$red-palette);
+$app-warn: mat-palette(mat.$yellow-palette);
+$theme-dark: mat-dark-theme($app-primary, $app-accent, $app-warn);
+@include angular-material-theme($theme-dark);
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
@@ -7,17 +14,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 @import 'bootstrap/scss/bootstrap';
 
 .mat-toolbar {
-  background:rgb(24, 22, 22) !important;
+  // background:rgb(24, 22, 22) !important;
 }
 
 .mat-drawer-container {
-  background-color: black !important;
+  // background-color: black !important;
 }
 
 .modalBg {
-  background-color: rgb(24, 22, 22);
+  // background-color: rgb(24, 22, 22);
   mat-dialog-container {
-    background: none;
+    // background: none;
     padding: 0;
   }
 }
