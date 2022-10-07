@@ -1,12 +1,13 @@
 .movie-card {
-  height: auto;
-  width: 180px;
-  float: left;
+  height: 330px;
+  width: 220px;
+  // float: left;
   background-color: transparent;
 }
 
 .mat-card {
   padding-bottom: 0 !important;
+  box-shadow: none !important;
 }
 
 .zoom {

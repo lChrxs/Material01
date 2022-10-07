@@ -1,0 +1,15 @@
+<div class="navigator-container">
+  <mat-card class="avatar">
+    <img mat-card-avatar src="./assets/img/ace.png">
+    <span class="ms-2 fs-5">Chris</span>
+  </mat-card>
+  <mat-divider></mat-divider>
+  <mat-nav-list>
+    <a mat-list-item routerLink=""> Home </a>
+    <ng-container *ngFor="let genre of menu">
+      <a mat-list-item [routerLink]="genre.id.toString()" routerLinkActive="active"> {{genre.name}} </a>
+    </ng-container>
+    
+  </mat-nav-list>
+  
+</div>

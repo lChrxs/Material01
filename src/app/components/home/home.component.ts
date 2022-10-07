@@ -20,26 +20,26 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.movieS.getActionMovies().subscribe({
-      next: (res => {
-        // console.log(res);
-        this.actionMovies = res
-      })
-    })
+    // this.movieS.getActionMovies().subscribe({
+    //   next: (res => {
+    //     // console.log(res);
+    //     this.actionMovies = res
+    //   })
+    // })
     
-    this.movieS.getComedyMovies().subscribe({
-      next: (res => {
-        // console.log(res);
-        this.comedyMovies = res
-      })
-    })
+    // this.movieS.getComedyMovies().subscribe({
+    //   next: (res => {
+    //     // console.log(res);
+    //     this.comedyMovies = res
+    //   })
+    // })
     
-    this.movieS.getDramaMovies().subscribe({
-      next: (res => {
-        // console.log(res);
-        this.dramaMovies = res
-      })
-    })
+    // this.movieS.getDramaMovies().subscribe({
+    //   next: (res => {
+    //     // console.log(res);
+    //     this.dramaMovies = res
+    //   })
+    // })
   }
 
   openModal(id: number){

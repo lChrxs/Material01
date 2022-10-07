@@ -1,0 +1,8 @@
+<div class="container-fluid p-0 mb-5">
+  <div class="row d-flex justify-content-center mt-4 mx-1">
+    <mat-card (click)="openModal(movie)" *ngFor="let movie of movies" class="movie-card zoom mx-1 my-1">
+      <img *ngIf="movie.poster" mat-card-image [src]="movieS.getMovieImage(movie.poster)">
+      <img *ngIf="!movie.poster" mat-card-image src="../../../assets/img/ace.png">
+    </mat-card>
+  </div>
+</div>

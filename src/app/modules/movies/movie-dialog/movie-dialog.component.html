@@ -1,0 +1,55 @@
+<div class="contenedor" *ngIf="movie">
+  <!-- *Boton para cerrar la ventana modal -->
+  <div class="float-end">
+    <button mat-icon-button class="no-select" (click)="close()">
+      <mat-icon class="fs-2 text-white">clear</mat-icon>
+    </button>
+  </div>
+
+  <div *ngIf="movie.background" class="bg-image" [ngStyle]="{'background-image': 'url(' + movieS.getMovieImage(movie.background) +')'}"></div>
+
+  <div class="mt-4 ps-5 text-white w-100">
+    <p class="fs-2 py-2">{{movie.title || movie.name}}</p>
+    <span class="fs-4 py-2 me-4">{{movie.popularity / 10.0 | percent}}</span>
+    <span class="fs-4 py-2">Estreno: {{movie.release_date || movie.first_air_date | date: 'dd/MMM/yyyy' }}</span>
+
+    <ng-container *ngIf="movie.overview; else default">
+      <p class="fs-5 py-2 pe-5">{{movie.overview}}</p>
+    </ng-container>
+
+    <ng-template #default>
+      <p class="fs-5 py-2 pe-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis ligula nibh, quis fringilla tellus
+        consequat eu. Fusce fermentum enim quis dolor blandit, at dictum risus tempus. Fusce eget vulputate urna. In
+        sodales tempus sapien ut viverra. Nulla quam sapien, lacinia in odio sed, aliquam luctus nunc. Integer
+        ullamcorper ipsum nec neque tincidunt, eu pulvinar urna viverra. Nulla vel urna sollicitudin, luctus urna vitae,
+        porttitor lacus. Cras fringilla metus nec suscipit tincidunt. Donec vitae est auctor, dictum nisl a, cursus
+        ipsum. Nam laoreet quam ipsum, nec dignissim purus pellentesque ac. Duis nulla lorem, aliquam non mi sed,
+        blandit fringilla massa. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Curabitur mollis orci eu imperdiet convallis. Etiam sit amet iaculis lacus, eget congue risus. In diam libero,
+        feugiat id finibus eu, vehicula sit amet leo.</p>
+    </ng-template>
+
+    <div class="movie-action mt-4">
+      <mat-grid-list cols="10" rowHeight="56px" class="movie-extras">
+        <mat-grid-tile colspan="1">
+          <div class="movie-action no-select" (click)="toggleMyList()">
+            <mat-icon *ngIf="!movieS.checkMovieFromList(movie.id)">add</mat-icon>
+            <mat-icon *ngIf="movieS.checkMovieFromList(movie.id)">done</mat-icon>
+            <br>
+            <span>Mi Lista</span>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1">
+          <div class="movie-action no-select" (click)="toggleMyFav()">
+            <mat-icon [ngStyle]="{'color': movieS.checkMovieFromFavorites(movie.id) ? 'red' : 'white'}">favorite</mat-icon>
+            <br>
+            <span>Me gusta</span>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="4"></mat-grid-tile>
+      </mat-grid-list>
+    </div>
+
+  </div>
+
+</div>

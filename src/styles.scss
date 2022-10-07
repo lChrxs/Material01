@@ -18,6 +18,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
   background-color: rgb(24, 22, 22);
   mat-dialog-container {
     background: none;
-    padding: 14px;
+    padding: 0;
   }
+}
+
+.no-select {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
 }

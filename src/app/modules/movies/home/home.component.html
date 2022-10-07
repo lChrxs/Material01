@@ -1,0 +1,22 @@
+<mat-drawer-container class="menu-container" hasBackdrop="true">
+  <mat-drawer #drawer mode="push" class="menu">
+    <app-header [data]="genres"></app-header>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <img src="./assets/img/netflix.png" style="height: 4vh; width: auto" >
+      <span class="div-spacer"></span>
+      <button mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>more-vert</mat-icon>
+      </button>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

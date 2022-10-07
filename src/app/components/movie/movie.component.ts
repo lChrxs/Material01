@@ -23,36 +23,36 @@ export class MovieComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.movieS.getMovieInfo(this.data).subscribe({
-      next: (res => {
-        // console.log(res);
-        this.movie = res
-      }),
-      error: (err => {
-        console.error(err);
-      }),
-      complete: () => {
-        // console.info('Peticion completa')
+    // this.movieS.getMovieInfo(this.data).subscribe({
+    //   next: (res => {
+    //     // console.log(res);
+    //     this.movie = res
+    //   }),
+    //   error: (err => {
+    //     console.error(err);
+    //   }),
+    //   complete: () => {
+    //     // console.info('Peticion completa')
 
-        if(this.movieS.getLikedMovies().indexOf(this.data) >= 0){
-          this.liked = true
-        }
+    //     if(this.movieS.getLikedMovies().indexOf(this.data) >= 0){
+    //       this.liked = true
+    //     }
 
-      }
-    })
+    //   }
+    // })
     
   }
 
-  likeMovie(id: number){
-    if(this.movieS.addLikedMovies(id)){
-      this.liked = true
-      return true
+  // likeMovie(id: number){
+  //   if(this.movieS.addLikedMovies(id)){
+  //     this.liked = true
+  //     return true
 
-    }else {
-      this.liked = false
-      return false
-    }
-  }
+  //   }else {
+  //     this.liked = false
+  //     return false
+  //   }
+  // }
 
   close(){
     this.dialogRef.close()
